@@ -1,8 +1,9 @@
 #! /bin/bash
 
-if [ !$1 ]; then
-	echo "Usage: build.sh --include-db [database name]"
-	exit
+# Make sure the correct number of args was passed from the command line
+if [ $# -eq 0 ]; then
+  echo "Usage $0 [--include-db] [database name]"
+  exit 1
 fi
 
 mkdir html
@@ -30,8 +31,7 @@ echo "[OK]\n"
 
 if [ "$1" = "--include-db" ]; then
 	echo "creating database..."
-	CMD = "create database $2;"
-	mysql -u root -p -e "$CMD"
+	mysql -u root -p -e "create database $2;"
 	echo '[OK]\n'
 	echo "loading db dump... "
 	mysql -u root -p $2 < /opt/dev/demo.com/demo.sql
