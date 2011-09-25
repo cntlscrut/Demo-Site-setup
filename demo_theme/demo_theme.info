@@ -1,0 +1,5 @@
+core = 7.x
+description = "Demo Theme for DC-ATL"
+engine = phptemplate
+base theme = zen
+name = Demo Theme
