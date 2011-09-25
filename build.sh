@@ -1,9 +1,14 @@
 #! /bin/bash
 
+if [ !$1 ]; then
+	echo "Usage: build.sh --include-db [database name]"
+	exit
+fi
+
 mkdir html
 cd html
 
-echo "creating make build...\n"
+echo "creating make build..."
 
 # generate the make file.
 drush make /opt/dev/demo.com/demo.make
@@ -24,8 +29,12 @@ ln -s /opt/dev/demo.com/demo_theme demo_theme
 echo "[OK]\n"
 
 if [ "$1" = "--include-db" ]; then
+	echo "creating database..."
+	CMD = "create database $2;"
+	mysql -u root -p -e "$CMD"
+	echo '[OK]\n'
 	echo "loading db dump... "
-	mysql -u root -p demo_db < /opt/dev/demo.com/demo.sql
+	mysql -u root -p $2 < /opt/dev/demo.com/demo.sql
 	echo "[OK]\n"
 fi
 
