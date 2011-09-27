@@ -36,5 +36,9 @@ if [ "$1" = "--include-db" ]; then
 	echo "loading db dump... "
 	mysql -u root -p $2 < /opt/dev/demo.com/demo.sql
 	echo "[OK]\n"
+else
+	echo "creating database..."
+	mysql -u root -p -e "create database $2;"
+	echo '[OK]\n'	
 fi
 
