@@ -11,6 +11,9 @@ projects[drupal][patch][] = http://drupal.org/files/issues/object_conversion_men
 projects[zen][type] = theme
 projects[zen][version] = 3.1
 
+projects[omega][type] = theme
+projects[omega][version] = 3.0
+
 ; module files ==============================================
 projects[devel][subdir] = 'dev'
 projects[devel][type] = 'module'
