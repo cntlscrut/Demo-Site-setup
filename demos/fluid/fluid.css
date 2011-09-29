@@ -1,0 +1,18 @@
+body {
+	width: 1200px;
+}
+
+div.box-1 {
+	width:30%;
+	float:left;
+	display:block inline;
+	border:dotted 1px #000;
+	margin: 5px;
+}
+div.box-2 {
+	width:60%;
+	float:left;
+	display:block inline;
+	border:dotted 1px #000;
+	margin: 5px;
+}
