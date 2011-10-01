@@ -25,7 +25,7 @@ function loadjscssfile(filename, filetype){
 
 $(document).ready(function () {
 	if (isiPhone()) {
-		loadjscssfile("http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css", 'css');
-		loadjscssfile('http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js', 'js');
+		loadjscssfile("jquery.mobile-1.0rc1.css", 'css');
+		loadjscssfile('jquery.mobile-1.0rc1.js', 'js');
 	}
 });
